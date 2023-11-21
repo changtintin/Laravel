@@ -1,0 +1,128 @@
+/* ============ Scroll Title ============ */
+/* https://alvarotrigo.com/blog/css-animations-scroll/ */
+
+#scroll-title {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'cwTeXYen';
+}
+
+#scroll-title:nth-child(1) {
+    color: #d3967e;
+}
+
+#scroll-title:nth-child(2) {
+    color: #d3967e;
+    
+}
+
+#scroll-title:nth-child(3) {
+    color: #d3967e;
+}
+
+#scroll-title:nth-child(4) {
+    color: #d3967e;
+}
+
+#scroll-title h1 {
+    font-size: 3rem;
+    margin: 20px;
+}
+
+#scroll-title h2 {
+    font-size: 50px;
+    margin: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Noto Sans TC', 'cwTeXYen';
+    color: #d3967e;
+}
+
+#scroll-title p {
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'cwTeXYen';
+}
+
+#scroll-title .text-container {
+    display: flex;
+}
+
+#scroll-title .text-container .text-box {
+    margin: 20px;
+    padding: 20px;
+    background: transparent;
+}
+
+#scroll-title .text-container .text-box h3 {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+#scroll-title .text-container .text-box p {
+    font-size: 1rem;
+}
+
+.reveal {
+    position: relative;
+    opacity: 0;
+}
+
+.reveal.active {
+    opacity: 1;
+}
+
+.active.fade-bottom {
+    animation: fade-bottom 1s ease-in;
+}
+
+.active.fade-left {
+    animation: fade-left 1s ease-in;
+}
+
+.active.fade-right {
+    animation: fade-right 1s ease-in;
+}
+
+@keyframes fade-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ======================== */

@@ -44,7 +44,8 @@ class RestaurantController extends Controller
             'popular_last_6month' , 'highest_rated_last_6month'=> now() -> subMonths(6)->startOfMonth()->toFormattedDayDateString()
             . " ~ " . now() -> startOfMonth()->toFormattedDayDateString(),
 
-            default => '~ ' . now()->toFormattedDayDateString()
+            default => '~ ' . now() -> toFormattedDayDateString()
+
         };
 
         $restaurants = match ($filter) {     
@@ -57,12 +58,19 @@ class RestaurantController extends Controller
 
             'highest_rated_last_6month' => $restaurants -> highestRatedLast6Months(),
 
-            default => $restaurants -> latest()
+            default => $restaurants -> latest() -> withAvgRating() -> withReviewsCount() 
+
         };
 
-        $restaurants = $restaurants -> get();
-
-        
+        $cacheKey = 'restaurants' . $filter . ':' . $name;
+ 
+        $restaurants = 
+            cache() -> remember(
+                $cacheKey, 
+                3600, 
+                fn() => 
+                $restaurants -> paginate(8)
+            );
 
         return view('restaurants.index', ['restaurants' => $restaurants, 'dateMsg' => $dateMsg ]);
     }
@@ -72,8 +80,7 @@ class RestaurantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         //
     }
 
@@ -94,19 +101,39 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Restaurant $restaurant){
+    public function show(int $id){
 
         /* 
             MY NOTE    
             ===================================================================== 
             _ latest(): all of the data sorted by the time in desc order
-            _ load(): Avoid lazy loading in laravel to load every review even not belong to this 
+
+            _ load(): 
+                * Avoid lazy loading in laravel to load every review even not belong to this 
+                * Fetch relations if the model that is already loaded
+
+            _ Cache: 
+                * Store data in cache to fetch the data faster
+                * Use key to get the corresponding data
+                * Use remember() / forget() to store or delete the data
+
         */
-        
-        return view('restaurants.show', [
-            'restaurant' => $restaurant -> load([
+
+        $cacheKey = 'restaurant:' . $id;
+
+        $restaurant = cache() -> remember(
+            $cacheKey, 
+            3600, 
+            fn() => 
+            Restaurant::with([
+
                 'reviews' => fn($query) => $query ->latest()
-            ]),
+
+            ]) -> withAvgRating() -> withReviewsCount() -> findOrFail($id)
+        );
+ 
+        return view('restaurants.show', [
+            'restaurant' => $restaurant,
             'sorted' => 'Latest'
         ]);
     }

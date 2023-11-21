@@ -1,0 +1,8 @@
+/* Shareit social share stick bar */
+#st-2 .st-btn[data-network='facebook'] {
+    background-color: rgb(240, 240, 183) !important;
+}
+
+.st-btn {
+    background-color: rgb(240, 240, 183) !important;
+}

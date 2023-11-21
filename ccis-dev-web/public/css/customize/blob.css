@@ -1,0 +1,74 @@
+/* ============ Blob ============ */
+.blob-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: rgb(247, 247, 187, 0.4);
+    width: 50vmax;
+    z-index: -1;
+    animation: move-1 20s ease-in-out infinite;
+    transform-origin: 50% 50%;
+}
+
+@keyframes move-1 {
+    0% {
+        transform: scale(1) translate(20px, -20px);
+    }
+
+    38% {
+        transform: scale(0.6, 1) translate(50vw, 60vh) rotate(160deg);
+    }
+
+    40% {
+        transform: scale(0.7, 1) translate(50vw, 60vh) rotate(160deg);
+    }
+
+    78% {
+        transform: scale(1.1) translate(0vw, 35vh) rotate(-10deg);
+    }
+
+    80% {
+        transform: scale(1.1) translate(0vw, 35vh) rotate(-10deg);
+    }
+
+    100% {
+        transform: scale(1) translate(10px, -20px);
+    }
+}
+
+.blob-2 {
+    position: absolute;
+    fill: rgb(187, 243, 247, 0.4);
+    width: 30vmax;
+    z-index: -1;
+    animation: move-2 15s ease-in-out infinite;
+    transform-origin: 50% 50%;
+    overflow: hidden;
+}
+
+@keyframes move-2 {
+    0% {
+        transform: scale(1) translate(10vw, -40vh);
+    }
+
+    38% {
+        transform: scale(0.8, 1.2) translate(65vw, 10vh) rotate(120deg);
+    }
+
+    40% {
+        transform: scale(0.8, 1.2) translate(65vw, 10vh) rotate(130deg);
+    }
+
+    78% {
+        transform: scale(1.2) translate(5vw, 8vh) rotate(-40deg);
+    }
+
+    80% {
+        transform: scale(1.2) translate(5vw, 8vh) rotate(-30deg);
+    }
+
+    100% {
+        transform: scale(1) translate(10px, -40vh);
+    }
+}
+/* ======================== */

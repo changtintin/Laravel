@@ -10,9 +10,13 @@ namespace App\Models;
 */
 
 use Illuminate\Database\Eloquent\Builder;
+
 use Illuminate\Database\Query\Builder as QueryBuilder;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
+
 use Carbon\Carbon;
 
 class Restaurant extends Model{
@@ -54,17 +58,14 @@ class Restaurant extends Model{
             _ The code below returns the result of "$this -> dateRangeFilter($q, $from, $to)"
         */
 
-        return $query -> withCount([ 
-
-            'reviews' => fn(Builder $q) => $this -> dateRangeFilter($q, $from, $to)
-
-        ]) -> orderBy('reviews_count', 'desc');
+        return $query -> withReviewsCount() -> orderBy('reviews_count', 'desc');
     }
 
     //Average rating in the specify date range 
     public function scopeHighestRated(Builder $query, $from = null, $to = null): Builder | QueryBuilder{
         
-        return $query -> withAvg(['reviews' => fn(Builder $q) => $this -> dateRangeFilter($q, $from, $to)], 'rating') 
+        return $query -> withAvgRating()
+
         -> orderBy('reviews_avg_rating', 'desc');
         
     }
@@ -135,5 +136,33 @@ class Restaurant extends Model{
         $end =  now() -> startOfMonth();
 
         return $query -> highestRated($start, $end) -> popular($start, $end) ->  minReviews(5);
+    }
+
+    public function scopeWithReviewsCount(Builder $query, $from = null, $to = null): Builder|QueryBuilder{
+
+        return $query -> withCount([ 
+
+            'reviews' => fn(Builder $q) => $this -> dateRangeFilter($q, $from, $to)
+
+        ]);
+
+    }
+
+    public function scopeWithAvgRating(Builder $query, $from = null, $to = null): Builder|QueryBuilder{
+
+        return $query -> withAvg([
+
+            'reviews' => fn(Builder $q) => $this -> dateRangeFilter($q, $from, $to)
+
+        ], 'rating') ;
+
+    }
+
+    protected static function booted(){
+
+        static::updated(fn(Restaurant $restaurant) => cache() -> forget('restaurant:'.$restaurant -> id));
+
+        static::deleted(fn(Restaurant $restaurant) => cache() -> forget('restaurant:'.$restaurant -> id));
+
     }
 }

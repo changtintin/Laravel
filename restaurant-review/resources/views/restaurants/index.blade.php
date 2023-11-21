@@ -78,7 +78,7 @@
             {{$dateMsg}}
 
         @endisset
-
+        
     </div>
 
     {{-- Restaurant List --}}
@@ -97,7 +97,7 @@
 
                             <a href="{{route('restaurants.show',['restaurant' => $restaurant])}}" class="restaurant-title">
                             
-                                {{ $restaurant -> name }}
+                                {{ $restaurant -> name }}                                
 
                             </a>
 
@@ -116,13 +116,17 @@
                             <div class="restaurant-rating">
                                
                                 
-                                {{ number_format($restaurant -> reviews_avg_rating, 1)}} / 5
+                                {{ number_format($restaurant -> reviews_avg_rating, 1)}} 
+
+                                <x-star-rating :rating="$restaurant->reviews_avg_rating" />
 
                             </div>
 
                             <div class="restaurant-review-count">
 
                                 out of {{ $restaurant -> reviews_count }}  {{ Str::plural('review', $restaurant -> reviews_count) }}
+
+                                <br>
 
                             </div>
 
@@ -151,5 +155,15 @@
         @endforelse
 
     </ul>
+
+    @if($restaurants -> count())
+
+        <nav class="mt-5">
+
+            {{ $restaurants -> links() }}
+
+        </nav>
+
+    @endif    
 
 @endsection

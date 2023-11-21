@@ -1,0 +1,45 @@
+#scrollspyTop {
+    position: fixed;
+    right: 0px;
+    bottom: 3vh;
+    z-index: 1;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    opacity: 0.3;
+}
+
+#to-top-btn {
+    font-size: 2rem;
+    color: white;
+    opacity: 1;
+}
+
+#h1-title-decor {
+    width: fit-content;
+    height: auto;
+    background-color: #69c7e1;
+    border-radius: 2px;
+}
+
+#h3-title-decor {
+    width: fit-content;
+    height: auto;
+    background-color: rgb(255, 224, 131);
+    border-radius: 2px;
+}
+
+#page-printer-btn {
+    color: #b0cad0;
+}
+
+#page-printer-btn:hover {
+    color: rgb(255, 224, 131);
+}
+
+#selected-file img {
+    max-width: 125px;
+    max-height: 125px;
+    float: left;
+    margin-bottom: 10px;
+}

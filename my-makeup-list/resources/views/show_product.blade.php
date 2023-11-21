@@ -1,9 +1,6 @@
 @extends('layout.basic')
 
 @section('style')
-
-    
-
 @endsection
 
 @section('header')

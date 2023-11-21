@@ -1,13 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
+
   <title>Restaurant Reviews</title>
+
   <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
 
+  <script src="https://kit.fontawesome.com/a0b3a023f8.js" crossorigin="anonymous"></script>
+
   {{-- blade-formatter-disable --}}
+
   <style type="text/tailwindcss">
+
     .btn {
       @apply bg-white rounded-md px-4 py-2 text-center font-medium text-slate-500 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-100 h-10;
     }
@@ -67,12 +75,17 @@
     .search-container {
       @apply my-5 flex items-center gap-2
     }
+    
   </style>
+
   {{-- blade-formatter-enable --}}
+
 </head>
 
 <body class="container mx-auto mt-10 mb-10 max-w-3xl">
+
   @yield('content')
+
 </body>
 
 </html>
