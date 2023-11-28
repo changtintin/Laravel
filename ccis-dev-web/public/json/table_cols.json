@@ -1,0 +1,9 @@
+{
+    "table_cols": {
+        "title": "名稱",
+        "content": "內容",
+        "date": "日期",
+        "appendix": "附件",
+        "type_id":"類型"
+    }
+}

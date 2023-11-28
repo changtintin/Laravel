@@ -8,10 +8,11 @@
 @forelse ($children as $child)
     <x-h3-title :title="$child -> title" />
     @php
-        include "../app/CustomSetting/conf.php";
+        include "../app/CustomSetting/conf.php";        
         $childVar = $navs[$child -> title];
     @endphp
-    @includeIf('theme-contents.' . $childVar, ['limit' => 6])   
+    <x-table-content :title="$childVar" :limit="5"/>
+    
     <div class='text-end p-4 me-4'> 
         <button class='circle-btn p-3' id='{{ $childVar }}'>  
             <a href="{{ route('theme', ["title" => $title, "subtitle" => $child -> title])}}">

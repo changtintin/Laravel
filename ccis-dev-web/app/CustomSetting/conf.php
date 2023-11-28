@@ -39,6 +39,7 @@ $jsonSetter = new JsonSetter();
 $navsPath = "../public/json/navs.json";
 $themeContentsPath = "../public/json/theme_contents.json";
 $messagesPath = "../public/json/messages.json";
+$tableColsPath = "../public/json/table_cols.json";
 
 $jsonSetter -> setPath($navsPath);
 $navs = $jsonSetter -> JsontoAry();
@@ -52,6 +53,10 @@ $researchPlan = $themeContents['research_plan'];
 $jsonSetter -> setPath($messagesPath);
 $messages = $jsonSetter -> JsontoAry();
 $errorMsg = $messages['error'];
+
+$jsonSetter -> setPath($tableColsPath);
+$tableCols = $jsonSetter -> JsontoAry();
+$tableCols = $tableCols['table_cols'];
 
 // Initialize share btn links
 $curURLGetter = new CurURLGetter();

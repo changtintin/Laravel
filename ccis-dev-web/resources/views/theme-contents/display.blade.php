@@ -1,4 +1,5 @@
 @php
-  $limit = ($limit)?? 0;
+  $limit = (isset($limit))? 5 : 0;
 @endphp
-<x-display-table :limit="$limit" />
+
+<x-table-content :title="$subtitle" :limit="$limit" />

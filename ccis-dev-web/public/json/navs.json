@@ -1,24 +1,24 @@
 {
     "navs":{
-        "中心簡介":"intro",
-        "發展階段":"develop",
-        "中心成員":"member",
-        "組織架構":"structure",
-        "辦公室位置":"location",
-        "中心法規":"law",
-        "緣起&理念":"origin",
-        "概覽":"overview",
-        "活動資訊":"campaign",
-        "涓滴匯流":"display",
-        "消息流通":"event",
-        "創造力講座":"lecture",
-        "教研實踐":"research-implement",
-        "教學":"teaching",
-        "研究":"research",
-        "實踐":"implement",
-        "成果分享":"result",
-        "捐政":"donate",
-        "相關連結":"link"        
+        "中心簡介":"=Intro",
+        "發展階段":"Develop",
+        "中心成員":"Member",
+        "組織架構":"Structure",
+        "辦公室位置":"Location",
+        "中心法規":"Law",
+        "緣起&理念":"Origin",
+        "概覽":"Overview",
+        "活動資訊":"Campaign",
+        "涓滴匯流":"Display",
+        "消息流通":"Event",
+        "創造力講座":"Lecture",
+        "教研實踐":"ResearchImplement",
+        "教學":"Teaching",
+        "研究":"ResearchActivity",
+        "實踐":"Implement",
+        "成果分享":"Result",
+        "捐政":"Donate",
+        "相關連結":"Link"        
     }
 }
  
