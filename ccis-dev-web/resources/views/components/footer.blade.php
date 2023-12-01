@@ -6,50 +6,58 @@
           <div class="col">
             <dl class="row">
               <p class="h6 col-lg-12 mb-5" style="font-size: 20px;  font-family: 'Poppins', sans-serif;">
+                <!-- TODO: add to json-->
                 <b>聯絡資訊</b>
               </p>
-              <dt class="col-lg-2">電話</dt>
-              <dd class="col-lg-10">886-2-29393091 ext. 65771</dd>
-              <dt class="col-lg-2">傳真</dt>
-              <dd class="col-lg-10">886-2-86618498</dd>
-              <dt class="col-lg-2">信箱</dt>
-              <dd class="col-lg-10">ccis@nccu.edu.tw http://www.ccis.nccu.edu.tw</dd>
-              <dt class="col-lg-2">地址</dt>
-              <dd class="col-lg-10">
-                116臺北市文山區指南路二段64號 逸仙樓7樓
-                <br>
-                64, Sec. 2, ZhiNan Rd., Wenshan District, Taipei City 11605, Taiwan (R.O.C)
-              </dd>
+              @php
+                use App\Models\FooterContact;
+                include "../app/CustomSetting/conf.php";     
+                $contacts = FooterContact::all();                           
+              @endphp 
+              @forelse ($contacts as $contact)
+                <dt class="col-lg-2">
+                  {{ $contact -> title }}
+                </dt>
+                <dd class="col-lg-10">
+                  {{ $contact -> content }}
+                </dd>
+              @empty
+                {{ $errorMsg['no_content'] }}
+              @endforelse              
             </dl>
           </div>
           <div class="col">
             <p class="h6 col-lg-12 mb-5" style="font-size: 20px; font-family: 'Poppins', sans-serif;">
+              <!-- TODO: add to json-->
               <b>網站地圖</b>
             </p>
             <dl class="row"> 
               @php
-                use App\Models\Theme;
+                use App\Models\Theme;                                  
                 $themes = Theme::all();                           
               @endphp             
               @isset($themes)
                 @foreach($themes as $theme)  
                   @if ($theme -> level == 1)  
                     <dd class="col-lg-6">
-                        <a href="theme/{{ $theme -> title }}/" class="text-decoration-none">
-                            {{ $theme -> title }}
+                        <a href="/theme/{{ $theme -> title }}/" class="text-decoration-none">
+                            {{ $navs[$theme -> title] }}
                         </a>
                     </dd>
                   @endif
                 @endforeach
               @endisset                         
               <dd class="col-lg-6">
-                <a href="/login" class="text-decoration-none"> 管理者登入 </a>
+                <a href="/login" class="text-decoration-none" style="color:#fffff;"> 管理者登入 </a>
               </dd>
+
             </dl>
           </div>
         </div>
         <div class="row text-left pt-5 pb-2">
-          <small><?php echo "瀏覽人次："?></small>
+          <!-- TODO: Create Views function-->
+          <!-- TODO: add to json-->
+          <small>瀏覽人次：</small>
           <h5>
             國立政治大學 創新與創造力研究中心
             Center for Creativity and Innovation Studies, National Chengchi University

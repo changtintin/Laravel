@@ -6,7 +6,7 @@
     $memberTypes = (isset($limit))? MemberType::limit(2) -> get() : MemberType::all();
   @endphp
   @forelse ($memberTypes as $memberType)
-  <x-h3-title :title="$memberType->title" />
+  <x-h3-title :title="$memberType -> title" />
   <div class='row h3-title-container m-5 gy-4'>
     @forelse ($memberType -> members as $member)
       <div class='col-lg-4 col-md-6 col-sm-12'>
@@ -14,8 +14,12 @@
           <img src="/img/member/{{ $member -> img }}" alt="..." class="card-img">
           <div class="bg-warning">
             <div class="card-body text-success text-center">
-              <p class="card-text h6" style="letter-spacing: 8px;">{{ $member -> name }}</p>
-              <p class="card-text">{{ $member -> caption }}</p>
+              <p class="card-text h6" style="letter-spacing: 8px;">
+                {{ $member -> name }}
+              </p>
+              <p class="card-text">
+                {{ $member -> caption }}
+              </p>
             </div>
           </div>
         </div>

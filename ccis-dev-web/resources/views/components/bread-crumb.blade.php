@@ -18,11 +18,15 @@
 <div class="row p-4">
   <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
+      <li class="breadcrumb-item">
+        <a href="{{ route('index') }}">
+          {{ $navs["Home"] }}
+        </a>
+    </li>
       @forelse ($themeStack as $theme)        
         <li class="breadcrumb-item active" aria-current="page">          
           @if ($theme == $title)
-            {{ $theme }}
+            {{ $navs[$theme] }}
           @elseif(Theme::where('title', $theme) -> value('parent_id'))
             @php
                 $id = Theme::where('title', $theme) -> value('id');
@@ -30,11 +34,11 @@
                 $parentTheme = $result -> title;
             @endphp
             <a href="{{ route('theme', ['title' => $parentTheme, 'subtitle' => $theme]) }}">
-              {{ $theme }}
+              {{ $navs[$theme] }}
             </a>
           @else
             <a href="{{ route('theme', ['title' => $theme]) }}">
-              {{ $theme }}
+              {{ $navs[$theme] }}
             </a>
           @endif
         </li>

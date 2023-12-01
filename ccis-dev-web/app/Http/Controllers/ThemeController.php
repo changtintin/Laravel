@@ -21,7 +21,7 @@ class ThemeController extends Controller {
 
         return view('page.theme', [
             'title' => $title,
-            'subtitle' => $subtitle
+            'subtitle' => $subtitle,            
         ]);
     }
 }

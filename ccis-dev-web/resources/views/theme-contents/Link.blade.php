@@ -1,7 +1,7 @@
 @php
+    // TODO: Create link page content
     use App\Models\Theme;
     use App\Models\Research;
-    use App\Http\Controllers\ResearchController;
     use Illuminate\Support\Facades\Schema;
 
     include "../app/CustomSetting/conf.php";
@@ -15,7 +15,3 @@
     <x-h3-title :title="$navs[$subtitle]" />    
     @includeIf('theme-contents.' . $subtitle, ['limit' => 1])       
 @endforeach
-
-
-
-

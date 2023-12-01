@@ -4,6 +4,7 @@ namespace app\CustomSetting;
 use App\Models\Theme;
 use App\CustomSetting\Class\ThemeNode;
 use App\CustomSetting\Class\ThemeTree;
+use App\CustomSetting\Class\TableNameGetter;
 use App\CustomSetting\Class\JsonSetter;
 use App\CustomSetting\Class\CurURLGetter;
 
@@ -34,6 +35,7 @@ foreach($themes as $theme){
 		$parentNode -> addChild($themeNode);
 	}     
 }  
+
 // Initialize variable translate json to php array
 $jsonSetter = new JsonSetter();
 $navsPath = "../public/json/navs.json";
@@ -41,6 +43,7 @@ $themeContentsPath = "../public/json/theme_contents.json";
 $messagesPath = "../public/json/messages.json";
 $tableColsPath = "../public/json/table_cols.json";
 
+// NOTE: Json arrays' names
 $jsonSetter -> setPath($navsPath);
 $navs = $jsonSetter -> JsontoAry();
 $navs = $navs['navs'];
@@ -62,4 +65,7 @@ $tableCols = $tableCols['table_cols'];
 $curURLGetter = new CurURLGetter();
 $fb_sharer = "https://www.facebook.com/sharer/sharer.php?u=" . $curURLGetter -> getcurURL() . "&amp;src=sdkpreparse";
 $line_sharer = "https://social-plugins.line.me/lineit/share?url=" . $curURLGetter -> getcurURL();
+
+// Initialize TableNameGetter (model name to table name)
+$tableNameGetter = new TableNameGetter();
 ?>

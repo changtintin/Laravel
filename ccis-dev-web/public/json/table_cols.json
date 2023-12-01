@@ -1,9 +1,19 @@
 {
     "table_cols": {
+        "ARRAY NAME":"$tableCols",
         "title": "名稱",
         "content": "內容",
         "date": "日期",
         "appendix": "附件",
-        "type_id":"類型"
+        "type_id":"類型",
+        "depart": "委託單位",
+        "host":"計畫主持人",
+        "period":"期程",
+        "link":"前往連結",
+        "fans_page":"FB粉專",
+        "author":"作者", 
+        "publisher":"出版社",
+        "plan":"策劃",
+        "publish_year":"出版年"
     }
 }

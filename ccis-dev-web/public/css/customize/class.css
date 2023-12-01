@@ -65,9 +65,10 @@
     background: rgb(246, 225, 166);
     font-weight: bold;
     font-size: 1em;
-    color: #4c90a378;
-    box-shadow: 1px 3px 4px 1px #4c90a378;
+    color: #4c90a3a0;
+    box-shadow: 1px 2px 3px 1px #4c90a359;
     outline: none;
+    padding: 15px;
 }
 
 .circle-btn:active {

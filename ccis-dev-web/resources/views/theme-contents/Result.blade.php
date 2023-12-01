@@ -6,14 +6,14 @@
 
     include "../app/CustomSetting/conf.php";
     $parent = Theme::where('title', $title) -> first();    
-    $children = Theme::find($parent -> id) -> children;    
+    $children = Theme::find($parent -> id) -> children;
 @endphp
-@foreach ($children as $child)    
+@foreach ($children as $child)
+    <x-h3-title :title="$navs[$child -> title]" />
     @php
-        $subtitle = $child -> title;       
+        $subtitle =  $child -> title; 
     @endphp
-    <x-h3-title :title="$navs[$subtitle]" />    
-    @includeIf('theme-contents.' . $subtitle, ['limit' => 1])       
+    @includeIf('theme-contents.' . $subtitle, ['limit' => 1])    
 @endforeach
 
 

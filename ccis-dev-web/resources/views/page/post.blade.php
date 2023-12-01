@@ -15,7 +15,7 @@
     }    
   @endphp
   <x-bread-crumb :title="$title"/>
-  <x-h1-title :title="$title" />
+  <x-h1-title :title="$navs[$title]" />
   @if ($postStatus == "published")
     <x-h3-title :title="$postTitle" />
     <div class='p-4 m-4'>      

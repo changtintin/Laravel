@@ -8,10 +8,9 @@ Route::get('/', function () {
 }) -> name('index');
 
 Route::get('/{title}/post/{id}', function($title, $id){   
-    include "../app/CustomSetting/conf.php";
-    $themeVar = $navs[$title];
-    $themeVar = "App\\Models\\" . $themeVar;    
-    $model = $themeVar::find($id);  
+    include "../app/CustomSetting/conf.php";    
+    $model = "App\\Models\\" . $title;    
+    $model = $model::find($id);  
     if($model){
         return view('page.post',[
             'title' => $title,

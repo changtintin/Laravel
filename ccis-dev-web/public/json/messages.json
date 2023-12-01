@@ -1,5 +1,6 @@
 {
     "error":{
+        "ARRAY NAME":"$errorMsg",
         "no_content": "尚無內容"
     }
 }

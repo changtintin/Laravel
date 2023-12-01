@@ -25,18 +25,18 @@
             @if($theme -> children)
               <li class="nav-item dropdown mx-3">
                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">                 
-                  {{ $theme -> title }}              
+                  {{ $navs[$theme -> title] }}              
                 </a>         
                 <ul class="dropdown-menu border-0" aria-labelledby="navbarDropdown">
                   <li>                     
                     <a class="dropdown-item" href="/theme/{{ $theme -> title }}"> 
-                      <b>{{ $theme -> title }} - 總覽</b> 
+                      <b>{{ $navs[$theme -> title] }} - 總覽</b> 
                     </a>                    
                   </li>
                   @foreach ($theme -> children as $childTheme)                                                               
                     <li>                     
                       <a class="dropdown-item" href="/theme/{{ $theme -> title }}/{{ $childTheme -> title }}"> 
-                        <b>{{ $childTheme -> title }}</b> 
+                        <b>{{ $navs[$childTheme -> title] }}</b> 
                       </a>                    
                     </li>
                   @endforeach
@@ -45,7 +45,7 @@
             @else
               <li class="nav-item active mx-3"> 
                 <a class="nav-link" href="/theme/{{ $theme -> title }}/">
-                  {{ $theme -> title }}
+                  {{ $navs[$theme -> title] }}
                 </a> 
               </li>  
             @endif

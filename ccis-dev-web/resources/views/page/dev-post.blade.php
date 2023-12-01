@@ -1,7 +1,10 @@
+@php
+  include "../app/CustomSetting/conf.php";
+@endphp
 @extends('layout.app')
 @section('content')
 <x-bread-crumb :title="$title" />
-<x-h1-title :title="$title" />
+<x-h1-title :title="$navs[$title]" />
 <x-h3-title :title="$develop -> title" />
 <div class='p-4 m-4'>
   @php
