@@ -6,7 +6,7 @@
           <div class="col">
             <dl class="row">
               <p class="h6 col-lg-12 mb-5" style="font-size: 20px;  font-family: 'Poppins', sans-serif;">
-                <!-- TODO: add to json-->
+                <!-- TODO: add to json -->
                 <b>聯絡資訊</b>
               </p>
               @php
@@ -28,7 +28,7 @@
           </div>
           <div class="col">
             <p class="h6 col-lg-12 mb-5" style="font-size: 20px; font-family: 'Poppins', sans-serif;">
-              <!-- TODO: add to json-->
+              <!-- TODO: add to json -->
               <b>網站地圖</b>
             </p>
             <dl class="row"> 

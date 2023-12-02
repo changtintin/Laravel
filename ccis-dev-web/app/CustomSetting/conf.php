@@ -4,7 +4,7 @@ namespace app\CustomSetting;
 use App\Models\Theme;
 use App\CustomSetting\Class\ThemeNode;
 use App\CustomSetting\Class\ThemeTree;
-use App\CustomSetting\Class\TableNameGetter;
+use App\CustomSetting\Class\NameGetter;
 use App\CustomSetting\Class\JsonSetter;
 use App\CustomSetting\Class\CurURLGetter;
 
@@ -66,6 +66,6 @@ $curURLGetter = new CurURLGetter();
 $fb_sharer = "https://www.facebook.com/sharer/sharer.php?u=" . $curURLGetter -> getcurURL() . "&amp;src=sdkpreparse";
 $line_sharer = "https://social-plugins.line.me/lineit/share?url=" . $curURLGetter -> getcurURL();
 
-// Initialize TableNameGetter (model name to table name)
-$tableNameGetter = new TableNameGetter();
+// Initialize NameGetter (model name to table name)
+$nameGetter = new NameGetter();
 ?>

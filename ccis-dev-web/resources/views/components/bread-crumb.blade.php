@@ -20,7 +20,7 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="{{ route('index') }}">
-          {{ $navs["Home"] }}
+          {{ $navs["home"] }}
         </a>
     </li>
       @forelse ($themeStack as $theme)        

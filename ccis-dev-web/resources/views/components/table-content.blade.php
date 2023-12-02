@@ -5,8 +5,8 @@
   use Carbon\Carbon;
   use App\Models\Theme;
   include "../app/CustomSetting/conf.php";   
-  $tableNameGetter -> setModelName($title);
-  $tableName = $tableNameGetter -> getTableName();     
+  $nameGetter -> setTableName($title);
+  $tableName = $nameGetter -> getTableName();     
 @endphp
 @if (Schema::hasTable($tableName))
   @php
@@ -24,8 +24,10 @@
       'plan',
       'publish_year'
     );
-    $cols = array_intersect($cols, $visibleCols);                              
-    $model = "App\\Models\\" . $title;                             
+    $cols = array_intersect($cols, $visibleCols);   
+    $nameGetter -> setModelName($title);
+                            
+    $model = "App\\Models\\" . $nameGetter -> getModelName();                             
     $table = (Schema::hasColumn($tableName, 'date'))? $model::where('status','published') -> orderBy('date', 'desc') : $model::where('status','published');
     $table = ($limit != 0)? $table -> limit($limit) -> get() : $table -> get();  
   @endphp

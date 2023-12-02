@@ -21,7 +21,7 @@
             </thead>
             @php
                 use App\Models\Display;
-                $displays = Display::where('status','published') -> orderBy('date', 'desc') -> take(10) -> get();            
+                $displays = Display::where('status','published') -> orderBy('date', 'desc') -> limit(5) -> get();            
             @endphp
             @isset($displays)
                 @foreach ($displays as $display)
