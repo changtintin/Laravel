@@ -67,9 +67,8 @@
                     </th>
                   @elseif($col == "link" && !empty($content))
                     <td>
-                      <a href='{{ $content }}' class='link-secondary'>
-                        <!-- TODO: add to json-->
-                        點此
+                      <a href='{{ $content }}' class='link-secondary'>                        
+                        {{ $links['click_here'] }}
                       </a>      
                     </td>
                   @elseif($col == "publish_year")
@@ -92,12 +91,12 @@
     </div>
   @else
     <div class='row m-4 p-4'>
-      {{ $errorMsg['no_content'] }}
+      {{ $message['no_content'] }}
     </div>  
   @endif
 @else
   <div class='row m-4 p-4'>
-    {{ $errorMsg['no_content'] }}
+    {{ $message['no_content'] }}
   </div>
 @endif
 
@@ -111,8 +110,7 @@
   <div class='text-end p-4 me-4'> 
     <button class='circle-btn p-3' id='{{ $title }}'>  
         <a href="{{ route('theme', ["title" => $parentRow -> title, "subtitle" => $title])}}">
-          <!-- TODO: add to json-->
-            ......點我看更多內容 
+            ...... {{ $btns['click_to_see_more'] }} 
         </a>
     </button> 
   </div> 

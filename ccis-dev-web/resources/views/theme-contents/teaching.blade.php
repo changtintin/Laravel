@@ -14,26 +14,22 @@
       <h5 class="pt-3">
         {{ $teaching -> title }}
       </h5>
-      @if ($teaching -> web_link)
-        @isset($themeContents['teaching']['web'])
-          <a href="{{ $teaching -> web }}" target="_blank">
-            <button class="btn btn-outline-primary btn-lg mt-3">              
-                {{ $themeContents['teaching']['web'] }}              
-            </button>
-          </a>
-        @endisset
+      @if ($teaching -> web_link)        
+        <a href="{{ $teaching -> web }}" target="_blank">
+          <button class="btn btn-outline-primary btn-lg mt-3">              
+              {{$btns['web'] }}              
+          </button>
+        </a>        
       @endif
-      @if ($teaching -> fans_page_link)
-        @isset($themeContents['teaching']['fans_page'])
-          <a href="{{ $teaching -> fans_page_link }}" target="_blank">
-            <button class="btn btn-outline-primary btn-lg mt-3">              
-              {{ $themeContents['teaching']['fans_page'] }}              
-            </button>
-          </a>
-        @endisset
+      @if ($teaching -> fans_page_link)       
+        <a href="{{ $teaching -> fans_page_link }}" target="_blank">
+          <button class="btn btn-outline-primary btn-lg mt-3">              
+            {{$btns['fans_page'] }}              
+          </button>
+        </a>        
       @endif            
     </div>
   @empty
-    <p class="m-4 p-4">{{ $errorMsg['no_content'] }}</p>
+    <p class="m-4 p-4">{{ $message['no_content'] }}</p>
   @endforelse
 </div>

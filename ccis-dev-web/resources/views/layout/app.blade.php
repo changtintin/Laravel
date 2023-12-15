@@ -34,6 +34,18 @@
     <div id="fb-root"></div>      
     <x-top-btn/>     
     <x-navbar/>  
+    <!--NOTE: Show Alert Messages-->
+    @if(session('success'))
+        <div class="row m-4">
+            <div class="alert alert-success alert-dismissible fade show" role="alert"> 
+            <strong> 
+                    {{ session('success') }}
+                </strong> 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> 
+                </button> 
+            </div>
+        </div>
+    @endif
     <div class = "bg-wrap">
         <div class="window-loader"></div>
         <div style="display:none;" id="main-content" class="animate-bottom">                           
@@ -43,6 +55,7 @@
         <img src="../../img/web_bg.png" class = "bg-img" loading="lazy">
         <!-- ./ background img -->      
     </div>
+    
     <x-footer/> 
 
     {{-- jQuery CDN --}}

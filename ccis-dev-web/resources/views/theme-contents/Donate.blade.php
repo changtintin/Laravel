@@ -22,7 +22,7 @@
       </a>
     </div>
   @empty
-    {{ $errorMsg['no_content'] }}
+    {{ $message['no_content'] }}
   @endforelse
 </div>
 

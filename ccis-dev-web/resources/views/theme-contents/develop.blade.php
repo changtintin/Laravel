@@ -35,7 +35,7 @@
                             $idx ++;
                         @endphp
                     @empty
-                        <p class="m-4 p-4">{{ $errorMsg['no_content'] }}</p> 
+                        <p class="m-4 p-4">{{ $message['no_content'] }}</p> 
                     @endforelse
                     <a href='{{ route('dev-post', ['id' => $develop -> id, 'title' => $title]) }}'> 
                         ... 查看更多
@@ -43,7 +43,7 @@
                 </div>                
             </li>
         @empty
-            <p class="m-4 p-4">{{ $errorMsg['no_content'] }}</p> 
+            <p class="m-4 p-4">{{ $message['no_content'] }}</p> 
         @endforelse
     </ul>
 </div>

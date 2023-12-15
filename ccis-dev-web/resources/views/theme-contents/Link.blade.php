@@ -1,5 +1,4 @@
 @php
-    // TODO: Create link page content
     use App\Models\Theme;
     use App\Models\Research;
     use Illuminate\Support\Facades\Schema;

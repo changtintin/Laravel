@@ -4,7 +4,6 @@
  
   include "../app/CustomSetting/conf.php";
   $relatedLinks = RelatedLink::all();
-  
 @endphp
 <div class='row h3-title-container m-5 justify-content-between mt-3'>
   @forelse ($relatedLinks as $relatedLink)
@@ -20,20 +19,20 @@
       @if (!empty($relatedLink -> web_link))
         <a href='{{ $relatedLink -> web_link }}' target='_blank'> 
             <button class='circle-btn m-4'> 
-            {{ $tableCols['link'] }}
+            {{ $btns['web'] }}
             </button> 
         </a>
       @endif
       @if (!empty($relatedLink -> fans_page_link))
         <a href='{{ $relatedLink -> fans_page_link }}' target='_blank'> 
             <button class='circle-btn m-4'> 
-            {{ $tableCols['fans_page'] }}
+            {{ $btns['fans_page'] }}
             </button> 
         </a>
       @endif
     </div>
   @empty
-    {{ $errorMsg['no_content'] }}
+    {{ $message['no_content'] }}
   @endforelse
   
 </div>

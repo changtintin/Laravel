@@ -6,7 +6,7 @@ class JsonSetter{
         $this -> path = $path;
     }
 
-    function JsontoAry(){   
+    function JsonToAry(){   
         if(!$this -> path){
             return;
         }   

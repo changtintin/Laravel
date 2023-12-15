@@ -1,0 +1,13 @@
+{
+    
+    "placeholders":{
+        "account":"帳號",
+        "pwd":"密碼"
+    },
+    "btns":{
+        "submit":"確認送出"
+    },
+    "titles":{
+        "admin_login":"管理者登入"
+    }
+}

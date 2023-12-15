@@ -11,7 +11,7 @@
                 {{ $law -> title }}
             </a> 
         @empty
-            <p class="m-4 p-4">{{ $errorMsg['no_content'] }}</p>
+            <p class="m-4 p-4">{{ $message['no_content'] }}</p>
         @endforelse
     </div>
 </div>

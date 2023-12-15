@@ -9,7 +9,7 @@ class CurURLGetter{
         $this -> curUrl = urlencode($this -> curUrl);
     }    
 
-    public function getcurURL(){
+    public function getCurUrl(){
         return $this -> curUrl;
     }
 }

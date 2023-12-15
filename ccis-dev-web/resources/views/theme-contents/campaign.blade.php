@@ -14,6 +14,6 @@
     
 @empty
     <p class="m-4 p-4">
-        {{ $errorMsg['no_content'] }}
+        {{ $message['no_content'] }}
     </p> 
 @endforelse

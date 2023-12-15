@@ -30,7 +30,7 @@
                 <ul class="dropdown-menu border-0" aria-labelledby="navbarDropdown">
                   <li>                     
                     <a class="dropdown-item" href="/theme/{{ $theme -> title }}"> 
-                      <b>{{ $navs[$theme -> title] }} - 總覽</b> 
+                      <b>{{ $navs[$theme -> title] }} {{ $navs['overview'] }}</b> 
                     </a>                    
                   </li>
                   @foreach ($theme -> children as $childTheme)                                                               

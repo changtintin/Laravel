@@ -1,6 +1,7 @@
 {
     "navs":{
-        "home": "首頁",
+        "ARRAY NAME":"$navs",
+        "home": "首頁",        
         "intro":"中心簡介",
         "develop":"發展階段",
         "member":"中心成員",
@@ -8,7 +9,7 @@
         "location":"辦公室位置",
         "law":"中心法規",
         "origin":"緣起&理念",
-        "overview":"概覽",
+        "overview":"ㄧ覽",
         "campaign":"活動資訊",
         "display":"涓滴匯流",
         "event":"消息流通",
@@ -26,7 +27,7 @@
         "video":"影音",
         "report":"研究報告",
         "journal":"期刊",
-        "other_theme":"其他主題"
+        "other_theme":"其他"
     }
 }
  

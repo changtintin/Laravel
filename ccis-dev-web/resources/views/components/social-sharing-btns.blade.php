@@ -2,7 +2,7 @@
   include "../app/CustomSetting/conf.php";
 @endphp
 <div class='d-flex justify-start-center mt-3'>
-  <div class='p-1 align-self-center' data-href='{{ $curURLGetter -> getcurURL() }}'>
+  <div class='p-1 align-self-center' data-href='{{ $curURLGetter -> getCurUrl() }}'>
     <a target='_blank'
       href='{{ $fb_sharer }}'
       id='fb-share-btn' class='text-decoration-none fs-3'> 

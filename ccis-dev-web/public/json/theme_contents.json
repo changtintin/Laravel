@@ -5,9 +5,21 @@
         "appendix":"附件",
         "type":"類型"
     },
-    "teaching": {
-        "web": "學程網站",
-        "fans_page": "粉絲專頁"
+    "buttons": {
+        "web": "前往網站",
+        "fans_page": "粉絲專頁",
+        "click_to_see_more":"點我看更多內容"
+    },
+    "links": {
+        "click_here":"點此"       
+    },
+    "footer":{
+        "views":"瀏覽人次",
+        "login":"管理者登入",
+        "logout":"管理者登出",
+        "map":"網站地圖",
+        "contact_info":"聯絡資訊",
+        "depart_title":"國立政治大學 創新與創造力研究中心 Center for Creativity and Innovation Studies, National Chengchi University"
     },
     "research_plan":[
         {

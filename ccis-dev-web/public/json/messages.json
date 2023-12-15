@@ -1,6 +1,11 @@
 {
-    "error":{
-        "ARRAY NAME":"$errorMsg",
-        "no_content": "尚無內容"
+    "messages":{
+        "ARRAY NAME":"$messages",
+        "no_content": "尚無內容",
+        "contact_to_register": "如需註冊新帳戶，請聯繫開發人員",
+        "login_failed": "登入帳號或密碼無效",
+        "login_success": "登入成功",
+        "logout_success": "登出成功",
+        "no_access_to_visit": "您無法查看該頁面"
     }
 }

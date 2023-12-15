@@ -42,30 +42,43 @@ $navsPath = "../public/json/navs.json";
 $themeContentsPath = "../public/json/theme_contents.json";
 $messagesPath = "../public/json/messages.json";
 $tableColsPath = "../public/json/table_cols.json";
+$adminsPath = "../public/json/admins.json";
 
 // NOTE: Json arrays' names
 $jsonSetter -> setPath($navsPath);
-$navs = $jsonSetter -> JsontoAry();
+$navs = $jsonSetter -> JsonToAry();
 $navs = $navs['navs'];
 
+$jsonSetter -> setPath($adminsPath);
+$admins = $jsonSetter -> JsonToAry();
+$placeholders = $admins['placeholders'];
+$adminBtns = $admins['btns'];
+$adminTitles = $admins['titles'];
+
 $jsonSetter -> setPath($themeContentsPath);
-$themeContents = $jsonSetter -> JsontoAry();
+$themeContents = $jsonSetter -> JsonToAry();
 $postCols = $themeContents['post'];
 $researchPlan = $themeContents['research_plan'];
+$footer = $themeContents['footer'];
+$btns = $themeContents['buttons'];
+$links = $themeContents['links'];
 
 $jsonSetter -> setPath($messagesPath);
-$messages = $jsonSetter -> JsontoAry();
-$errorMsg = $messages['error'];
+$messages = $jsonSetter -> JsonToAry();
+$message = $messages['messages'];
 
 $jsonSetter -> setPath($tableColsPath);
-$tableCols = $jsonSetter -> JsontoAry();
+$tableCols = $jsonSetter -> JsonToAry();
 $tableCols = $tableCols['table_cols'];
 
 // Initialize share btn links
 $curURLGetter = new CurURLGetter();
-$fb_sharer = "https://www.facebook.com/sharer/sharer.php?u=" . $curURLGetter -> getcurURL() . "&amp;src=sdkpreparse";
-$line_sharer = "https://social-plugins.line.me/lineit/share?url=" . $curURLGetter -> getcurURL();
+$fb_sharer = "https://www.facebook.com/sharer/sharer.php?u=" . $curURLGetter -> getCurUrl() . "&amp;src=sdkpreparse";
+$line_sharer = "https://social-plugins.line.me/lineit/share?url=" . $curURLGetter -> getCurUrl();
 
-// Initialize NameGetter (model name to table name)
+// Initialize NameGetter (model name to table name or vice versa)
 $nameGetter = new NameGetter();
+
+// FIXME: Create Register Form
+$password = bcrypt('ccis1160564');
 ?>
